@@ -31,3 +31,23 @@ db.collection('tweets').onSnapshot(qSnap => {
     renderTweet(data);
   });
 });
+
+// save data to firestore
+const button = document.querySelector("#compose-tweet-form button");
+const form = document.querySelector("#compose-tweet-form");
+
+button.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (form.tweetText) {
+    db.collection('tweets').add({
+      userName: 'user',
+      userHandle: '@user',
+      tweetText: form.tweetText.value,
+      flagged: false,
+      liked: false,
+      idOfOriginalTweet: '',
+      timestamp: Date.now()
+    });
+    form.tweetText.value = "";
+  }
+});
