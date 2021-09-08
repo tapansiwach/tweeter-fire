@@ -25,7 +25,7 @@ const renderTweet = data => {
 };
 
 // get data from firestore
-db.collection('tweets').onSnapshot(qSnap => {
+db.collection('tweets').orderBy('timestamp', 'desc').onSnapshot(qSnap => {
   qSnap.docs.forEach(doc => {
     const data = doc.data();
     renderTweet(data);
