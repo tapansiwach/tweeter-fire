@@ -2,6 +2,7 @@ body * {
   border: 1px dashed red;
 }
 
+/* top nav bar */
 #nav {
   padding: 1em 1em;
   background-color: cornflowerblue;
@@ -17,4 +18,31 @@ body * {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+
+/* compose tweet section */
+
+#compose-tweet-section {
+  margin: 1em 1em;
+}
+
+#compose-tweet-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#compose-tweet-form * {
+  margin-bottom: 1rem;;
+}
+
+#compose-tweet-form textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 0.125rem solid black;
+}
+
+#compose-tweet-form button {
+  background-color: cornflowerblue;
 }
