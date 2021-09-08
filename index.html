@@ -12,6 +12,10 @@
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- link to firebase CDNs -->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -51,6 +55,28 @@
       </div>
     </article>
   </section>
+
+
+  <!-- use firebase config to initialize app -->
+  <script>
+    // Web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDVhOUyfiYe81HwsWLDHLvqP_UUZkKZBgQ",
+      authDomain: "lhl-tweeter.firebaseapp.com",
+      projectId: "lhl-tweeter",
+      storageBucket: "lhl-tweeter.appspot.com",
+      messagingSenderId: "1075893515279",
+      appId: "1:1075893515279:web:991d380d2bd4ec38c29f7a"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true }); // to remove warnings in console
+  </script>
+
+  <script src="app.js"></script>
+
 </body>
 
 </html>
